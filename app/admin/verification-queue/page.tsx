@@ -5,6 +5,7 @@ import { verifyMetric } from "../actions";
 import type { AthleteProfile, PerformanceMetric } from "@/lib/db/schema";
 import { BrandHeader } from "@/components/BrandHeader";
 import { PhotoBanner } from "@/components/PhotoBanner";
+import { SignOutButton } from "@/components/SignOutButton";
 
 export default async function VerificationQueuePage() {
   const admin = await getCurrentAdmin();
@@ -31,7 +32,10 @@ export default async function VerificationQueuePage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <BrandHeader />
+      <div className="flex items-center justify-between">
+        <BrandHeader />
+        <SignOutButton redirectTo="/admin/login" />
+      </div>
 
       <div className="mt-6">
         <PhotoBanner

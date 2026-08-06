@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchRosterRows, filterAndSortRows, formatSports } from "@/lib/roster";
 import { BrandHeader } from "@/components/BrandHeader";
 import { RosterFilters } from "@/components/admin/RosterFilters";
+import { SignOutButton } from "@/components/SignOutButton";
 import { DeleteAthleteButton } from "@/components/DeleteAthleteButton";
 
 function autoDeleteDate(gradClassYear: number) {
@@ -38,7 +39,10 @@ export default async function ArchivePage({
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
-      <BrandHeader />
+      <div className="flex items-center justify-between">
+        <BrandHeader />
+        <SignOutButton redirectTo="/admin/login" />
+      </div>
 
       <div className="mt-6 flex items-center justify-between">
         <div>

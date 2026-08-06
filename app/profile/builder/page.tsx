@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { ProfileBuilderWizard } from "@/components/ProfileBuilderWizard";
 import { BrandHeader } from "@/components/BrandHeader";
 import { PhotoBanner } from "@/components/PhotoBanner";
+import { SignOutButton } from "@/components/SignOutButton";
 import type {
   AthleteSport,
   PerformanceMetric,
@@ -93,7 +94,10 @@ export default async function ProfileBuilderPage() {
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-12">
-      <BrandHeader />
+      <div className="flex items-center justify-between">
+        <BrandHeader />
+        <SignOutButton redirectTo="/login" />
+      </div>
 
       <div className="mt-6">
         <PhotoBanner
